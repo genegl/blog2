@@ -1,6 +1,9 @@
 {% extends "blog/base.html" %}
 
 {% content %}
-	<h1>About this website</h1>
-	<p>Thanks for visiting us!</p>
+	<form method="POST">
+		{% csrf_token %}
+		<p>Are you sure, you want to delete this post? {{ object }}</p>
+		<input type="submit" class="btn btn-danger" value="Confirm">
+	</form>
 {% endblock %}
